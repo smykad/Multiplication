@@ -17,7 +17,7 @@ import pyinputplus as pyip
 
 
 def max_value():
-    ret = pyip.inputInt()
+    ret = pyip.inputInt(min=1)
     return ret
 
 
@@ -27,7 +27,7 @@ def max_value():
 #   ******************************
 
 def num_of_questions():
-    ret = pyip.inputInt()
+    ret = pyip.inputInt(min=1)
     return ret
 
 
@@ -37,7 +37,7 @@ def num_of_questions():
 def question_generator(max_val):
 
     # Variables to increment
-    timeout = 10
+
     guesses = 0
     global correct
     global incorrect
@@ -145,18 +145,14 @@ def timer():
 
     start_time = time.time()
 
-    #  Boolean variable for while loop
-
-    timer = False
-
-    while timer is False:
+    while True:
 
         #  If current time - start_time is > 10 seconds
         #  Print this message
 
         if time.time() - start_time > timeout:
             print("10 seconds has passed, it's time to move on")
-            timer = True
+            break
 
 #   VARIABLES
 
